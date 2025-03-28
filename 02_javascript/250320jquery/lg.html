@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link />
+  </head>
+  <body>
+    <header>
+      <div class="inner d-flex container justify-content-between align-items-center">
+        <h1>
+          <a href="/">
+            <img
+              width="176"
+              height="77"
+              src="../250320jquery/images/lg-logo-new.svg"
+              alt="LG"
+              class="lgLogo w-50 h-100"
+            />
+          </a>
+        </h1>
+        <nav>
+          <ul class="menu d-flex gap-5 m-0">
+            <li>
+              <a href="#"><span class="menuItem">LG재단</span></a>
+              <ul class="sub">
+                <li><a href="#">재단 소개</a></li>
+                <li><a href="#">설립자</a></li>
+                <li><a href="#">재단 연혁</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">연암문화재단</a>
+              <ul class="sub">
+                <li><a href="#">재단 소개</a></li>
+                <li><a href="#">LG아트센터 서울</a></li>
+                <li><a href="#">LG디스커버리랩</a></li>
+                <li><a href="#">LG상남도서관</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">상록재단</a>
+              <ul class="sub">
+                <li><a href="#">재단 소개</a></li>
+                <li><a href="#">화담숲</a></li>
+                <li><a href="#">도감발간</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">연암학원</a>
+              <ul class="sub">
+                <li><a href="#">재단 소개</a></li>
+                <li><a href="#">연암대학교</a></li>
+                <li><a href="#">연암공과대학교</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">소식/공지</a>
+              <ul class="sub">
+                <li><a href="#">미디어 자료실</a></li>
+                <li><a href="#">재단소식</a></li>
+                <li><a href="#">언론보도</a></li>
+                <li><a href="#">공지사항</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <ul class="utility d-flex gap-3 m-0">
+          <li>
+            <img src="/02_javascript/250320jquery/images/icon-lang.svg" alt="" />
+          </li>
+          <li><img src="/02_javascript/250320jquery/images/icon-search.svg" alt="" /></li>
+          <li><img src="/02_javascript/250320jquery/images/icon-menu.svg" alt="" /></li>
+        </ul>
+      </div>
+    </header>
+    <div class="slider container bg-info" style="height: 300px"></div>
+
+    <section class="newsArea container d-flex gap-4 justify-content-center">
+      <div class="news">
+        <div class="sectHeader mb-4 d-flex">
+          <h2>언론보도</h2>
+          <a href="" class="goList"><img src="images/icon-plus.svg" alt="" class="plus" /></a>
+        </div>
+        <hr class="m-0 mb-2" />
+        <div class="sectCon">
+          <div class="container p-0">
+            <c:forEach items="${news}" var="dto">
+              <div class="box">
+                <ul class="p-0">
+                  <li class="pt-2 pb-4">
+                    <div>
+                      <h4>${dto.title }</h4>
+                      <span>${dto.formatterDate } /</span>
+                      <span>${dto.writer } /</span>
+                      <a href="#"><span class="mColor">${dto.category }</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </c:forEach>
+          </div>
+        </div>
+      </div>
+
+      <div class="notice">
+        <div class="sectHeader mb-4">
+          <h2>공지사항</h2>
+        </div>
+        <hr class="m-0 mb-2" />
+        <div class="sectCon">
+          <div class="container p-0">
+            <c:forEach items="${notice}" var="dto">
+              <div class="box">
+                <ul class="p-0">
+                  <li class="pt-2 pb-4">
+                    <div>
+                      <h4>${dto.title }</h4>
+                      <span>${dto.formatterDate } /</span>
+                      <a href="#"><span class="mColor">${dto.category }</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </c:forEach>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="listCon2">
+      <div class="mb-3 container">
+        <h1 class="fos71 fw9">공지사항</h1>
+        <div>
+          <ul class="menu d-flex mt-5 p-0 gap-5 fos24">
+            <li>전체</li>
+            <li>연암문화재단</li>
+            <li>상록재단</li>
+            <li>연암학원</li>
+          </ul>
+        </div>
+      </div>
+      <section class="noticeCon container mt-5">
+        <c:forEach items="${lists}" var="dto">
+          <div class="post2 container">
+            <div class="entryMeta py-3">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h2 class="fos18 fw9">${dto.title }</h2>
+                </div>
+                <div>
+                  <span class="fos14">${dto.formatterDate } /</span>
+                  <a href="#"><span class="mColor fos14">${dto.category }</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="post2 container">
+            <div class="entryMeta py-3">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h2 class="fos18 fw9">${dto.title }</h2>
+                </div>
+                <div>
+                  <span class="fos14">${dto.formatterDate } /</span>
+                  <a href="#"><span class="mColor fos14">${dto.category }</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </c:forEach>
+      </section>
+    </div>
+    <footer></footer>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="view"></div>
+    <script>
+      //fetch(javascript), ajax(jQuery), axios(javascript)
+
+      const API_KEY = "a5465491af98e1157d847f38bb48bee9"
+      const url = "https://dapi.kakao.com/v2/search/web?query=young k"
+
+      const fetchKakao = (async function () {})(url, {
+        method: "GET",
+        headers: {
+          Authorization: "KakaoAK " + API_KEY,
+          "Content-Type": "application/json",
+        },
+      })
+
+      //   fetch(request)
+      //     .then(function (result) {
+      //       result.json()
+      //     }) //데이터 가져와서 json 형태로 바꿔줌
+      //     .then(function (data) {
+      //       console.error("Error : ", error)
+      //     }) //
+    </script>
+  </body>
+</html>

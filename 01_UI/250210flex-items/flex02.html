@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .boxWrap {
+        display: flex;
+      }
+      /* .boxWrap div {
+        width: 300px;
+      }
+      .menu {
+        flex-shrink: 0;
+        background-color: skyblue;
+      }
+      .box {
+        flex-grow: 1;
+        background-color: pink;
+      } */
+
+      .boxWrap div {
+        flex: 1 1 30%;
+        /* grow shrink ??  */
+      }
+
+      .box2 {
+        background-color: blue;
+      }
+
+      .box3 {
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="boxWrap">
+      <!-- <div class="menu">1</div>
+      <div class="box">2</div> -->
+
+      <div class="box1">1</div>
+      <div class="box2">2</div>
+      <div class="box3">3</div>
+    </div>
+  </body>
+</html>

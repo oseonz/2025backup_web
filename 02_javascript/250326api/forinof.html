@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="view"></div>
+    <script>
+      const fruit = ["사과", "배", "딸기"]
+
+      let allFruit = "".forEach((item) => {
+        allFruit += item
+      })
+
+      document.querySelector(".view").innerHTML = allFruit
+
+      let allFruits = ""
+      for (const fruit of fruits) {
+        allFruit += `<div class="item">${input}>/div>`
+      }
+      document.querySelector("view1").innerHTML = allFruits
+
+      const data = {
+        name: "평택",
+        lat: 36.99472,
+        lon: 127.008889,
+        minimap: false,
+      }
+      for (const key in data) {
+        console.log(`${key} : ${data[key]}`)
+      }
+    </script>
+  </body>
+</html>

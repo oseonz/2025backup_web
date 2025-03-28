@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카카오 영입</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li{
+            list-style: none;
+        }
+        
+        a:link, a:visited {
+            color: black;
+            text-decoration: none;
+        }
+
+        body{
+            box-sizing: border-box;
+            font-size: 12px;
+            font-family: "Noto Sans KR", serif;
+        }
+
+        header{
+            width: 100%;
+            min-width: 1200px;
+            /* background-color: pink; */
+            padding: 10px 0;
+        }
+        
+        
+        .text{
+            font-size: 2em
+        }
+
+        ul.menu{
+            display: flex;
+            font-size: 16px;
+            background-color: lightblue;
+        }
+
+        ul.menu li {
+            padding: 15px;
+            padding-bottom: 20px;
+        }
+        
+        .wrap{
+            display: flex;
+            width: 1200px;;
+            justify-content: space-between;
+            background-color: pink;
+            margin: 0 auto; /*좌우를 auto로 설정하여 가운데로 맞춤 */
+        }
+
+        .wrap>.logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightgoldenrodyellow;
+        }
+
+        .wrap>.logo>img {
+            height: 25px;
+        }
+
+        .menu>li{
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .util{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="wrap">
+            <div class="logo">
+                <img src="img_logo.png" alt="">
+            </div>
+            <ul class="menu">
+                <li><a href="#">카카오 생활</a></li>
+                <li><a href="#">크루 이야기</a></li>
+                <li><a href="#">진행 중 공고</a></li>
+                <li><a href="#">지원안내</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+            <div class="util">
+                <a href="#">로그인</a>
+            </div>
+        </div>
+    </header>
+</body>
+</html>

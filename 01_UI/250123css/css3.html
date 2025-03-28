@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카카오 영입</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Noto Sans KR", serif;
+        }
+
+        a:link, a:visited{
+            color: #000;
+            text-decoration: none;
+        }
+
+        li{
+            list-style: none; /* 앞에 점 없애기 */
+            font-weight: bold;
+        }
+
+        .hd{
+            width: 100%;
+            min-width: 1200px;
+            /* background-color: pink; */
+            padding: 10px 0;
+        }
+
+        .wrapper{
+            display: flex;
+            width: 1200px;
+            /* background-color: pink; */
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+
+        .wrapper>h1>a>img{
+            height: 25px;
+        }
+
+        .menu{
+            display: flex;
+            /* background-color: skyblue; */
+        }
+
+        .menu>li{
+            /* background-color: violet; */
+            padding: 10px;
+        }
+
+        .menu> li:hover{
+            /* background-color: palevioletred; */
+        }
+
+        .menu li.gray {
+    background-color: gray;
+}
+    </style>
+</head>
+<body>
+    <div class="hd">
+        <div class="wrapper">
+            <h1><a href="#"><img src="img_logo.png" alt=""></a></h1>
+            <ul class="menu">
+                <li><a href="#">카카오 생활</a></li>
+                <li><a href="#">크루 이야기</a></li>
+                <li><a href="#">진행 중 공고</a></li>
+                <li><a href="#">지원안내</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+            <div class="util">
+                <a href="#">로그인</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카카오 영입</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a:link, a:visited{
+            color: white;
+            text-decoration: none;
+        }
+
+        body {
+            font-size: 12px;
+            font-family: "Noto Sans KR", serif;
+            background-color: #f9f9f9;
+        }
+
+        .container{
+            margin: 0 auto;
+            width: 1296px;
+            padding: 40px 0;
+            /* 위아래만 20 넣기 */
+        }
+
+        /* card  */
+        .card{
+            width:406px;
+            height: 408px;
+            background: rgb(255, 255, 255);
+            border-radius: 20px;
+            overflow: hidden;
+            list-style: none;
+            box-shadow: 5px 5px 20px #ddd;
+            transition: 0.2s;
+        }
+
+        h2{
+            font-size: 36px;
+            letter-spacing: -0.6;
+        }
+        .img1{
+            width: 100%;
+        }
+        h3{
+            font-size:26px;
+            letter-spacing: -0.6px;
+            color:#333;
+            margin-bottom: 20px;
+        }
+        p{
+            font-size: 14px;
+            color:#333;
+           
+        }
+
+        .banner_subtitle {
+            color: white;
+            font-weight: bold;
+        }
+        .card_body{
+            padding: 20px; 
+        } 
+        /* 사진의 밑부분 */
+
+
+        .card1{
+            width: 406px;
+            border-radius: 20px;
+            overflow: hidden;
+            /* 오버플로우 하이든 필수 */
+            background-color: white;
+        }
+
+        .img2{
+            width: 100%;
+            height: 224px;
+            background-image: url(img02.png);
+            background-size: 100%;
+            /* background-position: left bottom; */
+            /* 왼쪽 밑에 붙음 */
+        } 
+        /* 블럭 단위 요소라 크기가 필요함 */
+
+        .card_body1{
+            padding: 20px;
+            background-color: white;
+        }
+
+        .card3{
+            /* width: 408px;
+            display: flex;
+            flex-direction:column; */
+            /* flex의 방향을 세로로 바꿔줌 */
+            /* border-radius: 20px;
+            overflow: hidden;
+            background-color: white; */
+        }
+        
+        .card_body3{
+            padding: 20px;
+            background-color: white;
+        }
+
+        .card:hover, .card1:hover, .card3:hover{
+            /* box-shadow: 0 0 20px #bbb;
+            transition: 0.2s; */
+            transform: translate(0, -5px);
+            /* 오른쪽, 밑쪽 방향이 양수값 */
+            box-shadow: 15px 15px 20px #ddd;
+            transition: 0.2s;
+        }
+
+        .card_all{
+            display: flex;
+            /* gap: 35px; */
+            justify-content: space-between;
+            padding-bottom: 50px;
+        }
+
+        .banner{
+            background-color: rgb(39, 52, 139);
+            padding: 48px 96px;
+            border-radius: 18px;
+            width: 1296px;
+            margin-bottom: 120px;
+            position: relative;
+        }
+
+        .subtitle{
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .subtitle i{
+            font-size: 20px;
+            transform: rotate(45deg);
+        }
+
+        .img_aside{
+            width: 350px;
+            position: absolute;
+            right: 100px;
+            top: 50%;
+            margin-top: -50px;
+        }
+
+        .hr{
+            background:#e3e3e3;
+            height:1px;
+            border:0;
+            margin-bottom: 60px;
+        }
+
+        h3{
+            font-size:26px;
+            letter-spacing: -0.6px;
+            color:#333;
+            margin-bottom: 20px;
+            /* text-align: center; */
+        }
+
+        .h3ft {
+            text-align: center;
+        }
+
+        .icon{
+            width: 60px;height: 60px;
+            background-image: url(icon.png);
+            background-size: 260px 251px;
+        }
+
+        .icon.kakao{
+            background-position: -140px 0;
+        }
+        .icon.kakao:hover{
+            background-position: -200px 0;
+        }
+
+        .icon.insta{
+            background-position: -140px -60px;
+        }
+        .icon.insta:hover{
+            background-position: -200px -60px;
+        }
+
+        .icon.youtube{
+            background-position: -140px -120px;
+        }
+        .icon.youtube:hover{
+            background-position: -200px -120px;
+        }
+
+        .icon.linked{
+            background-position: -140px -180px;
+        }
+        .icon.linked:hover{
+            background-position: -200px -180px;
+        }
+
+        .icon.facebook{
+            background-position: -0px -190px;
+        }
+        .icon.facebook:hover{
+            background-position: -60px -190px;
+        }
+
+        .icon_all{
+            display: flex;
+            gap: 28px;
+            justify-content: center;
+            padding: 24px 0 48px;
+        }
+
+        .btn{
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn_more{
+            background-color: #eee;
+            border-radius: 30px;
+            border: none;
+            font-size: 18px;
+            padding: 15px 40px 17px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 50px;
+        }
+
+        .btn_more:hover{
+            background-color: #cdcdcd;
+        }
+
+        .mb30{margin-bottom: 30px !important;}
+        .mb20{margin-bottom: 20px !important;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mb30">더 많은 크루 소식이 있어요</h2>
+        <div class="card_all">
+            <div class="card">
+                <img src="img01.png" alt="" class="img1">
+                <div class="card_body">
+                    <h3>2024 겨울 인턴십 온보딩 (feat. 뉴크루 웰컴키트)</h3>
+                    <p>#문화 #브런치</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img02.png" alt="" class="img1">
+                <div class="card_body">
+                    <h3>카카오의 개발자 교육-카카오 테크 캠퍼스</h3>
+                    <p>#성장 #유튜브</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img03.png" alt="" class="img1">
+                <div class="card_body">
+                    <h3>TECH FOR IMPACT "선한 기술로 사회문제를 해결해요"</h3>
+                    <p>#동료 #유튜브</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn">
+            <button class="btn_more">크루 콘텐츠 더보기 +</button>
+        </div>
+
+        <a href="#">
+            <div class="banner">
+            <h2 class="mb20">오늘의 카카오가 궁금하다면?</h2>   
+            <div class="subtitle">
+                <p class="banner_subtitle">기업사이트 바로가기</p>
+                <i class="fa-solid fa-circle-up"></i>
+            </div>
+            <img src="img_aside.png" alt="" class="img_aside">
+        </div></a>
+        
+        <hr class="hr">
+
+        <h3 class="footer h3ft">카카오의 다양한 소식을 확인하세요</h3>
+
+        <div class="icon_all">
+            <a href="#"><div class="icon kakao"></div></a>
+            <a href="#"><div class="icon insta"></div></a>
+            <a href="#"><div class="icon youtube"></div></a>
+            <a href="#"><div class="icon linked"></div></a>
+            <a href="#"><div class="icon facebook"></div></a>
+        </div>
+        
+        <img src="test.png" alt="">
+    </div>
+    
+</body>
+</html>

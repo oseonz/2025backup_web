@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+.service .imgWrap {
+  width: 120px;
+  height: 120px;
+  background-image: url(../images/icon_main01_fix.png);
+}
+
+.bg-gray {
+  background-color: #cdcdcd;
+}
+
+li,
+ul {
+  list-style: none;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: black;
+}

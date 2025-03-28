@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: "LGSmHaSB", sans-serif;
+}
+a:visited,
+a:link {
+  color: black;
+  text-decoration: none;
+}
+ul,
+li {
+  list-style: none;
+}
+
+.inner {
+  max-width: 1280px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 999;
+  padding-top: 15px;
+}
+
+header .sub {
+  display: none;
+  position: absolute;
+
+  width: 100%;
+}
+
+.slider {
+  margin-top: 73px !important;
+}
+
+section .sectHeader h2 {
+  font-size: 1.688rem;
+  color: #bb0841;
+  font-weight: 900;
+}
+
+section hr {
+  border: solid 1.5px black;
+  opacity: 100;
+}
+
+.menu a {
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.box li {
+  border-bottom: 1px solid #bbb;
+}
+
+.newsArea h4 {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.newsArea span {
+  font-size: 14px;
+}
+
+.newsArea .goList {
+  width: 18px;
+  height: 18px;
+  top: 0;
+  margin: 0 0 0 15px;
+}
+
+.newsArea .plus {
+  width: 18px;
+  height: 18px;
+  top: 0;
+  opacity: 0.25;
+  margin: 0 0 0 15px;
+}
+
+/* list */
+.listCon {
+  margin-top: 73px !important;
+  padding: 100px 0;
+}
+
+.listCon .post .listImg {
+  width: 275.5px;
+  height: 155px;
+}
+
+.newsCon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* 요소들 사이의 간격 */
+}
+
+.post {
+  flex: 1 1 calc(25% - 20px); /* 한 줄에 4개, 간격을 고려한 너비 */
+  box-sizing: border-box; /* padding을 포함한 크기 계산 */
+}
+
+/* list2 */
+.listCon2 {
+  margin-top: 73px !important;
+  padding: 100px 0;
+}
+
+.listCon2 .noticeCon {
+  border-top: 1px solid #bbb;
+}
+
+.listCon2 .post2 {
+  border-bottom: 1px solid #bbb;
+  padding: 0px;
+}
+
+/* about */
+.about .entryHeader {
+  margin-bottom: 80px;
+}
+
+.about .philosophy {
+  padding: 50px 0;
+  background-color: #f0f4f6;
+  text-align: c;
+}
+
+/* footer */
+footer .families {
+  background-color: #fcfcfc;
+  padding: 50px 0 45px 0;
+}
+
+footer .familyLoop {
+  gap: 60px;
+}
+
+footer .lgfImg1 {
+  height: 38px;
+}
+
+footer .lgfImg2 {
+  height: 30px;
+}
+
+footer .lgfImg3 {
+  height: 30px;
+}
+
+footer .lgfImg4 {
+  height: 44px;
+}
+
+footer .lgfImg5 {
+  height: 30px;
+}
+
+footer .lgfImg6 {
+  height: 30px;
+}
+
+footer {
+  height: 218px;
+  position: relative;
+  transform: translateY(0%);
+}
+footer .siteFooter {
+  width: 100%;
+  background-color: #101010;
+  padding: 35px 0;
+}
+
+.mColor {
+  color: #bb0841;
+}
+
+.fos71 {
+  font-size: 71px;
+}
+
+.fos24 {
+  font-size: 24px;
+}
+
+.fos18 {
+  font-size: 18px;
+}
+
+.fos14 {
+  font-size: 14px;
+}
+
+.fw9 {
+  font-weight: 900;
+}

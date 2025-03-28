@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="pink">
+    <div class="align-items-center justify-content-center mx-0">
+      <div class="box container rounded-5 bg-white p-4">
+        <div class="d-flex gap-1">
+          <div class="circle red rounded-circle"></div>
+          <div class="circle yellow rounded-circle"></div>
+          <div class="circle green rounded-circle"></div>
+        </div>
+        <h2 class="text-center pb-4 fw-bold">MY TODO LIST</h2>
+        <div class="container text-center">
+          <div class="d-flex justify-content-between pb-3 gap-3">
+            <input
+              type="text"
+              class="inp p-2 pe-5 rounded-3 border-1"
+              placeholder="오늘의 할 일은?"
+            />
+            <button class="btn bg-secondary-subtle">+</button>
+          </div>
+          <ul class="listView"></ul>
+          <button class="dBtn d-block w-100 rounded-3 p-2 pink border-0 text-white">
+            전체 삭제
+          </button>
+          <script src="js/script03.js"></script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

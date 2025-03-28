@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link />
+  </head>
+  <body>
+    <div>
+      <div class="listCon">
+        <div class="mb-3 container">
+          <h1 class="fos71 fw9">언론보도</h1>
+          <div>
+            <ul class="menu d-flex mt-5 p-0 gap-5 fos24">
+              <li>전체</li>
+              <li>연암문화재단</li>
+              <li>상록재단</li>
+              <li>연암학원</li>
+            </ul>
+          </div>
+        </div>
+        <section class="container">
+          <c:forEach items="${lists}" var="dto">
+            <div class="post">
+              <img src="../250320jquery/images/listImg.jpg" alt="" class="listImg" />
+              <div class="entryMeta">
+                <h2 class="pb-2 fos18 fw9">${dto.title }</h2>
+                <span class="fos14">${dto.formatterDate } /</span>
+                <span class="fos14">${dto.writer } /</span>
+                <a href="#"><span class="mColor fos14">${dto.category }</span></a>
+              </div>
+            </div>
+          </c:forEach>
+        </section>
+      </div>
+    </div>
+
+    <!-- <div class="listCon container">
+      <h3>글리스트( 게시물 : ${totalCount } )</h3>
+      <table class="table table-striped table-hover">
+        <tr>
+          <th>번호</th>
+          <th>글쓴이</th>
+          <th>제목</th>
+          <th>삭제</th>
+        </tr>
+        <c:forEach items="${lists}" var="dto" varStatus="loop">
+          <tr>
+            <td>${totalCount - ((currentPage-1)*size + loop.index) }</td>
+            <td>${dto.writer }</td>
+            <td><a href="/view?id=${dto.id}" class="nav-link">${dto.title }</a></td>
+            <td><a href="/delete?id=${dto.id}" class="btn btn-primary">삭제</a></td>
+          </tr>
+        </c:forEach>
+      </table>
+      <div class="d-flex justify-content-center">
+        <ul class="pagination">
+          <c:if test="${currentPage > 1 }">
+            <li class="page-item">
+              <a class="page-link" href="list?page=${currentPage -1}&size=${size}">Previous</a>
+            </li>
+          </c:if>
+
+          <c:forEach begin="1" end="${totalPages }" var="page">
+            <li class="page-item ${page == currentPage ? 'active':''}">
+              <a class="page-link" href="list?page=${page}&size=${size}">${page}</a>
+            </li>
+          </c:forEach>
+
+          <c:if test="currentPage < totalPage">
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </c:if>
+        </ul>
+      </div>
+      <div class="d-flex justify-content-end">
+        <a href="/writeForm" class="btn btn-primary">글작성</a>
+      </div>
+    </div> -->
+  </body>
+</html>

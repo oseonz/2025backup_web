@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0; }
+
+        html, body{
+            height: 100%;
+        }
+
+        body{
+            display: flex;
+            
+        }
+
+        .box{
+            background-color: pink;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.2s;
+            background-image: url(images/bg-top.jpg);
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .box.bg2{
+            background-image: url(images/lime-1000.jpg);
+        }
+
+        .box.bg3{
+            background-image: url(images/lime-300.jpg);
+        }
+
+        .box.bg4{
+            background-image: url(images/bg-top.jpg);
+        }
+
+        .box:hover {
+            flex-grow: 1.5;
+        }
+
+        .box.blue{
+            background-color: skyblue;
+        }
+
+        @media (max-width: 900px) {
+            body{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box bg1">1</div>
+    <div class="box bg2">2</div>
+    <div class="box bg3">3</div>
+    <div class="box blue bg4">4</div>
+</body>
+</html>

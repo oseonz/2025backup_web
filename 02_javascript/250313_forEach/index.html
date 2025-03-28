@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul class="list"></ul>
+    <script>
+      let arr = ["서울", "부산", "대구", "대전", "광주"]
+
+      let city = ""
+      for (let i = 0; i < arr.length; i++) {
+        // document.write(arr[i])
+        city += "<li>" + arr[i] + "</li>"
+      }
+      console.log("for:" + city)
+
+      document.querySelector(".list").innerHTML = city
+
+      let arrCity = ""
+      arr.forEach(function (iten, index) {
+        arrCity += `<div>${arr[i]} / ${i}</div>`
+      })
+      console.log("forEach: " + arrCity)
+      document.querySelector(".cityList").innerHTML = arrCity
+    </script>
+  </body>
+</html>

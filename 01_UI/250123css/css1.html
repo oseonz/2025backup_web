@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset css */
+        *{
+            /* color: red; */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* 레이어 잡을때 기본으로 넣어두기 */
+        }
+
+        /* container css */
+        .container {
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px 20px 30px 40px;
+            border: 4px dashed black;
+            margin: 40px;
+        }
+
+        a:link{
+            color: black;
+            text-decoration: none;
+        } /* 링크 걸린 텍스트 설정 바꾸기 */
+
+        a:visited{
+            color: black;
+        }
+        /* 링크 방문햇던 텍스트 설정 바꾸기 */
+
+        a:active{
+            color: red;
+        }
+
+        a:hover{
+            text-decoration: underline;
+        }
+    
+        body {
+            background-image: url(bg.png);
+            /* 배경 이미지 반복 설정이 디폴트 */
+        }
+
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            padding: 20px;
+            border:10px solid blue;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>test</h1>
+    <p>Loraem ipsum dolor sit amet.</p>
+    <div>Lorem, ipsum dolor.</div>
+    <div class="container">consectetur Lorem ipsum dolor sit amet.</div>
+    <a href="http://www.naver.com">네이버</a>
+    <a href="http://www.daum.net">다음</a>
+    <a href="http://www.korea.com">코리아</a>
+    <div class="box">test</div>
+    <div style="height: 1000px;"></div>
+</body>
+</html>

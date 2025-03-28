@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카카오 영입</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li{
+            list-style: none;
+        }
+        /* li에 .을 없애줌 */
+
+        a:link, a:visited{
+            color: black;
+            text-decoration: none;
+        }
+
+        body {
+            font-size: 12px;
+            font-family: "Noto Sans KR", serif;
+            background-color: #ffffff;
+        }
+        /* 바디에 폰트 설정 */
+
+        header.wrapper{
+            background: rgb(255, 255, 255);
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* 헤더색 지정 */
+
+        .wrap{
+            width: 1296px;
+            margin: 0 auto;
+            display: flex;
+            /* 구역 나눈 걸 세로로 맞춤 */
+            justify-content: space-between;
+            /* 아이템 사이에 균일한 간격 */
+        }
+
+        .menu>ul{
+            display: flex;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .menu>ul>li {
+            padding: 18px;
+        }
+
+        .menu>ul>li>a{
+            display: block;
+            /* display: flex; */
+            padding: 10px;
+            /* a태그를 블럭 단위로 지정->영역 넓힘 */
+            /* justify-content:space-between;
+            align-items: center; */
+            background-color: rgb(255, 255, 255);
+        }
+
+        .util{
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: white;
+        }
+
+        .util>a{
+            display: block;
+            padding: 10px;
+        }
+
+        .logo>a>img{
+            height: 24px;
+            margin-top: 6px;
+        }
+
+        h1.logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+
+        .visual{
+            background-color: #02d7ff;
+            height: 640px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            margin: 0 auto;
+            width: 1296px;
+            padding: 40px 0;
+            /* 위아래만 20 넣기 */
+        }
+
+        /* .container li{
+            width: 380px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 18px;
+        } */
+
+        .container .card1 li a{
+            display: block;
+            padding: 24px;
+            padding-bottom: 40px;
+        }
+
+        .container .tag li a{
+            height: 65px;
+            padding: 20px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container h2{
+            text-align: center;
+        }
+
+        .container .h2_desc{
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .card1{
+            display: flex;
+        }
+
+        .card1 li{
+            width: 380px;
+            margin: 20px 30px 0 0;
+            background-color: white;
+            border-radius: 18px;
+            box-shadow: 10px 10px 20px #ccc;
+        }
+
+        .tag{
+            display: flex;
+        }
+
+        .tag li{
+            /* display: flex; */
+            background-color: #eee;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 24px 12px 0 0;
+            border-radius: 31px;
+            letter-spacing: -0.0px;
+            padding-left: 5px;
+            padding-right: 5px;
+            /* padding: 14px 24px 16px; */
+        }
+
+        .tag li:hover{
+            background-color: rgb(252, 205, 16);
+        }
+
+        .tag a{
+            color: #333;
+        }
+
+        h2{font-size: 42px;}
+        h3{font-size: 26px;
+            letter-spacing: -0.6px;
+            line-height: 1.4;}
+        h4{font-size: 36px;}
+
+        .h2_desc{font-size: 18px;}
+
+        .h3_more{font-size: 16px;
+        font-weight: bold;
+        padding-bottom: 40px;
+        }
+
+        .py20{padding: 20px 0 !important;}
+        .py30{padding: 30px 0 !important;}
+        .py40{padding: 40px 0 !important;}
+
+        .mb20{margin-bottom: 20px !important;}
+        .mb30{margin-bottom: 30px !important;}
+        .mb40{margin-bottom: 40px !important;}
+        .mb50{margin-bottom: 50px !important;}
+    </style>
+</head>
+<body>
+    <header class="wrapper">
+        <div class="wrap">
+            <h1 class="logo">
+                <a href="#"><img src="img_logo.png" alt="kakao 영입"></a>
+                <!-- 로고 이미지 -->
+            </h1>
+            <!-- 로고 -->
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">카카오 생활</a></li>
+                    <li><a href="#">크루 이야기</a></li>
+                    <li><a href="#">진행 중 공고</a></li>
+                    <li><a href="#">지원안내</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <!-- 메뉴는 ul과 li 같이 쓰기 -->
+                </ul>
+            </nav>
+            <!-- 메뉴 -->
+            <div class="util">
+                <a href="#">로그인 ▼</a>
+            </div>
+            <!-- 로그인 -->
+        </div>
+    </header>
+    <!-- 헤더 -->
+     <div class="visual">
+        <img src="banner01.png" alt="">
+     </div>
+     <div class="container py40">
+        <h2>Join the krew</h2>
+        <p class="h2_desc">카카오 크루는 우리의 일상을 더 좋게 만들고 싶은 멋진 동료입니다.<br>
+            다양한 생각을 자유롭게 나누며, 언제나 놀라운 결과를 만들어내죠.<br>
+            당신도 세상을 바꾸고 싶나요? 카카오로 오세요!!</p>
+     </div>
+     <div class="container mb50">
+        <h4>🎉 관심있는 공고를 찾아보세요</h4>
+        <ul class="tag mb40">
+            <li>
+                <a href="#"><span class="tag_desc">#테크</span></a>
+            </li>
+            <li>
+                <a href="#"><span class="tag_desc">#서비스비즈</span></a>
+            </li>
+            <li>
+                <a href="#"><span class="tag_desc">#디자인</span></a>
+            </li>
+            <li>
+                <a href="#"><span class="tag_desc">#브랜드</span></a>
+            </li>
+            <li>
+                <a href="#"><span class="tag_desc">#스태프</span></a>
+            </li>
+        </ul>
+        <ul class="card1">
+            <li>
+                <a href="#">
+                    <img src="icon_img01.png" alt="" class="mb20">
+                    <h3 class="mb20">100% 리얼 스토리<br>카카오 크루 이야기</h3>
+                    <span class="h3_more">크루 이야기 살펴보기</span>
+                    <div class="circle"></div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="icon_img02.png" alt="" class="mb20">
+                    <h3 class="mb20">휴가부터 의료지원까지<br>크루 복지와 혜택</h3>
+                    <span class="h3_more">크루 혜택 알아보기</span>
+                    <div class="circle"></div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="icon_img03.png" alt="" class="mb20">
+                    <h3 class="mb20">카카오 합류를 위한<br>영입절차</h3>
+                    <span class="h3_more">영입절차 확인하기</span>
+                    <div class="circle"></div>
+                </a>
+            </li>
+        </ul>
+     </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="d-flex gap-3 align-items-center">
+        <h2>회원리스트</h2>
+        <div class="btn userBtn btn-primary">회원리스트</div>
+      </div>
+      <table class="table">
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>email</th>
+          <th>phone</th>
+        </tr>
+        <!-- <tbody class="userView">
+          <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+            <th>phone</th>
+          </tr>
+        </tbody> -->
+      </table>
+    </div>
+    <script>
+      const URL = "https://jsonplaceholder.typicode.com/users"
+
+      //   $(".userBtn").click(function () {
+      //     loadUser()
+      //   })
+
+      //   function loadUsers() {
+      //     $.ajax({
+      //       url: URL,
+      //       type: "GET",
+      //       dataType: "json",
+      //       success: function (users) {
+      //         console.log(users)
+      //       },
+      //       error: function (xhr, status, error) {
+      //         console.error("회원실패 : " + error)
+      //       },
+      //     })
+      //   }
+
+      $(".userBtn").click(function () {
+        loadUser()
+      })
+
+      function loadUsers() {
+        $.ajax({
+          url: URL,
+          type: "GET",
+          dataType: "json",
+          success: function (users) {
+            console.log(data)
+
+            let html = ""
+            data.forEach(function (item, index) {
+              html += `<tr>
+                            <td>${item.id}</td>
+                            <td>${item.name}</td>
+                            <td>${item.email}</td>
+                            <td>${item.phone}</td>
+                        </tr>`
+            })
+            $(".userView").html(html)
+          },
+          error: function (xhr, status, error) {
+            console.error("회원실패 : " + error)
+          },
+        })
+      }
+    </script>
+  </body>
+</html>

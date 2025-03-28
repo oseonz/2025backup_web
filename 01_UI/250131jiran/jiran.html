@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지란지교에스앤씨</title>
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        a:link, a:visited{color: #333333;text-decoration: none;}
+        li{list-style: none;}
+
+        body {
+            font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+            font-size: 10px;
+     }
+
+     .hd .smile{
+        width: 54px;
+     }
+
+     .hd{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 50px;
+        /* border: 1px solid #444; */
+        margin: 30px 50px;
+        border-radius: 10px;
+     }
+
+     .hd:hover{
+        box-shadow: 0px 0px 10px #ddd;
+        transition: 0.5s;
+     }
+
+     .logo a{
+        display: flex;
+     }
+
+     .menu>ul{
+        display: flex;
+        font-size: 18px;
+     }
+
+     .menu>ul>li>a{
+        display: block;
+        padding: 13px 50px;
+     }
+     
+     .menu>ul>li>a:hover{
+        color: #FF7F00;
+     }
+
+     .util{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+     }
+
+     .util>.search{
+        font-size: 25px;
+     }
+
+     .util>.allmenu{
+        width: 30px;
+        height: 30px;
+     }
+
+     /* section */
+
+     .sec1{
+        height: 800px;
+        /* background-color: skyblue; */
+        padding-top: 160px;
+        /* 안쪽에서 밀어내리는 것 */
+     }
+
+     .secWrap{
+        width: 1440px;
+        margin: 0 auto;
+        /* background-color: lightpink; */
+     }
+     
+     h2{
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 30px;
+     }
+
+     .cloud {
+        color: #222;
+     }
+
+     h3{
+        font-size: 80px;
+        line-height: 93px;
+        margin-bottom: 30px;
+        color: #FF7F00;
+     }
+
+     .secu{
+        color: gray;
+     }
+
+     .jiransnc{
+        font-weight: bold;
+     }
+
+     p.cotent{
+        font-size: 20px;
+        margin-bottom: 100px;
+        color: #222;
+     }
+
+     span.anjun{
+        color: #FF7F00;
+        font-weight: bold;
+     }
+
+     .icon{
+        width: 28px;height: 42px;
+        border: 1px solid #000;
+        position: relative;
+        border-radius: 20px;
+     }
+
+     .circle{
+        width: 8px;height: 8px;
+        background-color: #FF7F00;
+        position: absolute;
+        left: 50%;
+        margin-left: -4px; top: 5px;
+        border-radius: 5px;
+     }
+
+     .scroll{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: gray;
+        font-size: 14px;
+        padding-top: 140px;
+     }
+
+     .visual{
+        position: absolute;
+        right: 0;bottom: 0;
+        width: 55%;
+        top: 140px;
+     }
+    </style>
+</head>
+<body>
+    <header class="hd">
+        <h1 class="logo">
+            <a href="#">
+                <img src="img/logo1.gif" alt="" class="smile">
+                <img src="img/logo2.svg" alt="지란지교에스앤씨" class="txt">
+            </a>
+        </h1>
+        <nav class="menu">
+            <ul>
+                <li><a href="">제품소개</a></li>
+                <li><a href="">제품문의</a></li>
+                <li><a href="">홍보센터</a></li>
+                <li><a href="">회사소개</a></li>
+            </ul>
+        </nav>
+        <div class="util">
+            <i class="fa-solid fa-magnifying-glass search"></i>
+        <img src="img/allmenu-btn.png" alt="" class="allmenu">
+        </div>
+    </header>
+
+    <section class="sec1">
+        <div class="secWrap">
+            <h2>
+                <span class="secu">Cloud Security Solution</span><span class="jiransnc"> JIRANSNC</span>
+            </h2>
+            <h3>
+                <span class="cloud">클라우드</span> 보안<br>솔루션 전문기업
+            </h3>
+            <p class="cotent">분야별 최고의 기술력을 가진 다양한 솔루션과 서비스를 제공합니다.<br>
+                <span class="anjun">지란지교에스앤씨와 함께 하면 더 안전</span>합니다.
+            </p>
+            <div class="scroll">
+                <div class="icon">
+                    <div class="circle"></div>
+                </div>
+                <p>SCROLL DOWN</p>
+            </div>
+        </div>
+        <img src="img/visual.png" alt="" class="visual">
+    </section>
+</body>
+</html>

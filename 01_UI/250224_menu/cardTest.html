@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .wrap {
+        padding: 16px 0;
+      }
+
+      .container {
+        width: 1200px;
+        margin: auto;
+        padding: 0 16px;
+      }
+
+      .container .row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .card img {
+        width: 100%;
+        transition: 0.3s;
+      }
+
+      .card {
+        flex: auto;
+        width: calc(25% - 30px);
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        /* 이미지 튀어나온거 없애줌 */
+      }
+
+      .card .card-body {
+        padding: 16px;
+      }
+
+      @media (max-width: 990px) {
+        .container {
+          width: 100%;
+        }
+
+        .card {
+          width: calc((50% -10px));
+        }
+      }
+
+      @media (max-width: 767px) {
+        .card {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="container">
+        <div class="row">
+          <div class="card">
+            <img src="/01_UI/250224_menu/images/testimg.jpg" alt="" />
+            <div class="card-body">
+              <h4>안녕하세요</h4>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id,
+                dignissimos?
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="/01_UI/250224_menu/images/testimg.jpg" alt="" />
+            <div class="card-body">
+              <h4>안녕하세요</h4>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id,
+                dignissimos?
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="/01_UI/250224_menu/images/testimg.jpg" alt="" />
+            <div class="card-body">
+              <h4>안녕하세요</h4>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id,
+                dignissimos?
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="/01_UI/250224_menu/images/testimg.jpg" alt="" />
+            <div class="card-body">
+              <h4>안녕하세요</h4>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id,
+                dignissimos?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

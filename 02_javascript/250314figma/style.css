@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+}
+
+/* .listView {
+  width: 300px;
+} */
+
+.listView li {
+  display: flex;
+  justify-content: space-between;
+}
+.myDel {
+  cursor: pointer;
+}
+.listView .view {
+  /* background: skyblue; */
+  text-decoration: line-through;
+  color: gray;
+}
+
+.pink {
+  background-color: rgb(178, 178, 178);
+}
+
+.box {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 10px rgb(133, 133, 133);
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  background-color: #e3f2fd;
+}
+
+.red {
+  background-color: #ff5f57;
+}
+
+.yellow {
+  background-color: #febc2e;
+}
+
+.green {
+  background-color: #28c840;
+}
