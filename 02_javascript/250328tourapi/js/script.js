@@ -1,120 +1,102 @@
-let page = 1
-let totalCount = 0
-const numOfRows = 12
+let currentPage = 1
+let totalPage = 1
 
-async function getTourData() {
+const GO_KEY =
+  "fvqYaGbexxakRPZj75oysm6y0Hos5Li3Vq47UgAYNvrYTeOzWmK9%2F5vzNC9OnAgbyG%2BtIWWqRIdTFKxa010hVA%3D%3D"
+
+async function getTourData(page = 1) {
   const loading = document.querySelector(".loading")
-
-  const GO_KEY =
-    "l0WtV%2F7q2V%2FEH86zOC4y54rjJIci1FU1Dx8yW149%2F2RoPbMkLFPBsMUxIr97MJRg%2FlxhrnVx9xKksuIihnSJsw%3D%3D"
 
   try {
     const tourRes = await axios.get(
-      `http://apis.data.go.kr/B551011/KorService1/areaBasedList1?numOfRows=${numOfRows}&pageNo=${page}&MobileOS=ETC&MobileApp=AppTest&ServiceKey=${GO_KEY}&listYN=Y&arrange=A&contentTypeId=12&_type=json`
+      `http://apis.data.go.kr/B551011/KorService1/areaBasedList1?numOfRows=12&pageNo=${page}&MobileOS=ETC&MobileApp=AppTest&ServiceKey=${GO_KEY}&listYN=Y&arrange=A&contentTypeId=12&_type=json`
     )
-    console.log(tourRes)
     const tourDataList = tourRes.data.response.body.items.item
-    totalCount = tourRes.data.response.body.totalCount
+    const totalCount = tourRes.data.response.body.totalCount
 
-    console.log(tourDataList)
+    // console.log(tourDataList)
+    renderTourList(tourDataList)
+    totalEl.innerHTML = totalCount
 
-    let html = ""
-    for (const tourData of tourDataList) {
-      html += `
-        <div class="col-6 col-md-3 mb-3">
-          <div class="card overflow-hidden">
-            <div class="imgView">
-              <img src="${
-                tourData.firstimage !== "" ? tourData.firstimage : "images/no_img.jpg"
-              }" alt="" />
-            </div>
-            <div class="card-body">
-              <h4>${tourData.title}</h4>
-              <div class="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-title="${tourData.title}"
-                data-lat="${tourData.mapy}"
-                data-lng="${tourData.mapx}"
-              >상세보기</div>
-            </div>
-          </div>
-        </div>
-      `
-    }
+    totalPage = Math.ceil(totalCount / 12)
 
-    document.querySelector(".tourData").innerHTML = html
-    document.querySelector(".total").innerHTML = totalCount
+    currentPage = page
+    renerPagination() //페이지네이션 불러오기
 
-    generatePagination()
+    // let html = ""
+    // for (const tourData of tourDataList) {
+    //   html += `
+    //             <div class="col-6 col-md-3 mb-3">
+    //                 <div class="card overflow-hidden">
+    //                     <div class="imgView">
+    //                     <img src="${
+    //                       tourData.firstimage != "" ? tourData.firstimage : "images/no_image.jpg"
+    //                     }" alt="" />
+    //                     </div>
+    //                     <div class="card-body">
+    //                     <h5>${tourData.title}</h5>
+    //                     <button class="btn btn-primary"
+    //                     data-bs-toggle="modal"
+    //                     data-bs-target="#exampleModal"
+    //                     data-title="${tourData.title}"
+    //                     data-lat="${tourData.mapy}"
+    //                     data-lng="${tourData.mapx}"
+    //                     >상세보기</button>
+    //                     </div>
+    //                 </div>
+    //             </div>
+    //             `
+    // }
+    // document.querySelector(".tourData").innerHTML = html
+    // document.querySelector(".total").innerHTML = totalCount
+    // pagenation()
   } catch (error) {
-    console.error("정보x" + error)
+    console.error("데이터를 불러올 수 없습니다.", error)
   } finally {
     loading.style.display = "none"
   }
 }
 
-function generatePagination() {
-  const paginationContainer = document.querySelector(".pagination")
-  paginationContainer.innerHTML = ""
+function renderTourList(tourList) {
+  tourContainer.innerHTML = tourList
+    .map((item) => {
+      const imageUrl = item.firstimage || "image/no_image.jpg"
+      return `
+                <div class="col-6 col-md-3 mb-3">
+                    <div class="card overflow-hidden">
+                        <div class="imgView">
+                        <img src="${
+                          tourData.firstimage != "" ? tourData.firstimage : "images/no_image.jpg"
+                        }" alt="" />
+                        </div>
+                        <div class="card-body">
+                        <h5>${tourData.title}</h5>
+                        <button class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                        data-title="${tourData.title}"
+                        data-lat="${tourData.mapy}"
+                        data-lng="${tourData.mapx}"
+                        >상세보기</button>
+                        </div>
+                    </div>
+                </div>
+                `
+    })
+    .join("")
+}
 
-  const totalPages = Math.ceil(totalCount / numOfRows)
+function pagenation() {
+  const startPage = Math.max(currentPage - 1 / 10) * 10 + 1
+  const endPage = Math.min(page + 9, totalPages)
 
-  const prevButton = document.createElement("button")
-  prevButton.classList.add("page-link")
-  prevButton.textContent = "Prev"
-  prevButton.disabled = page === 1
-  prevButton.addEventListener("click", () => {
-    if (page > 1) {
-      page--
-      getTourData()
-    }
-  })
-
-  const prevItem = document.createElement("li")
-  prevItem.classList.add("page-item")
-  prevItem.appendChild(prevButton)
-  paginationContainer.appendChild(prevItem)
-
-  const startPage = Math.max(page - 2, 1)
-  const endPage = Math.min(page + 2, totalPages)
+  pageList.innerHTML = ""
 
   for (let i = startPage; i <= endPage; i++) {
-    const pageButton = document.createElement("button")
-    pageButton.classList.add("page-link")
-    pageButton.textContent = i
-
-    if (i === page) {
-      pageButton.classList.add("active")
-    }
-
-    pageButton.addEventListener("click", () => {
-      page = i
-      getTourData()
-    })
-
-    const pageItem = document.createElement("li")
-    pageItem.classList.add("page-item")
-    pageItem.appendChild(pageButton)
-
-    paginationContainer.appendChild(pageItem)
+    html += `<span><a href="#">${i}</a></span>`
   }
-
-  const nextButton = document.createElement("button")
-  nextButton.classList.add("page-link")
-  nextButton.textContent = "Next"
-  nextButton.disabled = page === totalPages
-  nextButton.addEventListener("click", () => {
-    if (page < totalPages) {
-      page++
-      getTourData()
-    }
-  })
-
-  const nextItem = document.createElement("li")
-  nextItem.classList.add("page-item")
-  nextItem.appendChild(nextButton)
-  paginationContainer.appendChild(nextItem)
+  console.log(html)
+  document.querySelector(".pageNum").innerHTML = html
 }
 
 getTourData()
@@ -129,7 +111,12 @@ exampleModal.addEventListener("shown.bs.modal", function (e) {
   const lng = parseFloat(button.getAttribute("data-lng"))
 
   const modalTitle = exampleModal.querySelector(".modal-title")
+  // const modalLat = exampleModal.querySelector(".lat")
+  // const modalLng = exampleModal.querySelector(".lng")
+
   modalTitle.innerHTML = title
+  // modalLat.innerHTML = lat
+  // modalLng.innerHTML = lng
 
   const container = document.getElementById("map")
   const mapOption = {
@@ -142,8 +129,13 @@ exampleModal.addEventListener("shown.bs.modal", function (e) {
   const map = new kakao.maps.Map(container, mapOption)
 
   const markerPosition = new kakao.maps.LatLng(lat, lng)
-  const marker = new kakao.maps.Marker({
+  const marker = new kakao.maps.Maker({
     position: markerPosition,
     map: map,
   })
+
+  setTimeout(() => {
+    kakao.maps.event.trigger(map, "resize")
+    map.setCenter(markerPosition)
+  }, 100)
 })

@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
@@ -13,7 +12,7 @@
     />
     <script
       type="text/javascript"
-      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=05222ace53571c8fbb636c91def0fbc2&autoload=true"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7f4b8ef69c2d5fb3ce30718607f68d44&autoload=true"
     ></script>
     <style>
       .imgView {
@@ -36,7 +35,7 @@
         white-space: nowrap;
       }
       .loading {
-        background-color: rgba(200, 0, 0, 0.3);
+        background-color: rgba(190, 190, 190, 0.3);
         position: absolute;
 
         width: 100%;
@@ -52,10 +51,11 @@
         align-items: center;
       }
     </style>
+    <title>Document</title>
   </head>
   <body>
     <div class="loading">
-      <div class="spinner-border text-danger" role="status">
+      <div class="spinner-border" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
     </div>
@@ -89,28 +89,6 @@
       <div class="row tourData"></div>
     </div>
 
-    <div class="container">
-      <div class="d-flex justify-content-center">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link"><</a>
-          </li>
-
-          <li class="page-item">
-            <a class="page-link" href="#">></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- <script>
-      let html = ""
-      for (let i = 1; i <= 10; i++) {
-        html += `<span><a href="#">${i}</a></span>`
-      }
-      console.log(html)
-      document.querySelector(".pageNum").innerHTML = html
-    </script> -->
     <!-- Modal -->
     <div
       class="modal fade"
@@ -141,7 +119,23 @@
         </div>
       </div>
     </div>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1" aria-disabled="true"> < </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">5</a></li>
+        <li class="page-item"><a class="page-link" href="#">6</a></li>
 
+        <li class="page-item">
+          <a class="page-link" href="#"> > </a>
+        </li>
+      </ul>
+    </nav>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
       integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="

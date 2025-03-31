@@ -62,7 +62,7 @@ function generatePagination() {
 
   const prevButton = document.createElement("button")
   prevButton.classList.add("page-link")
-  prevButton.textContent = "Prev"
+  prevButton.textContent = "<"
   prevButton.disabled = page === 1
   prevButton.addEventListener("click", () => {
     if (page > 1) {
@@ -102,7 +102,7 @@ function generatePagination() {
 
   const nextButton = document.createElement("button")
   nextButton.classList.add("page-link")
-  nextButton.textContent = "Next"
+  nextButton.textContent = ">"
   nextButton.disabled = page === totalPages
   nextButton.addEventListener("click", () => {
     if (page < totalPages) {

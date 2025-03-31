@@ -1,7 +1,7 @@
 const Url = "https://dapi.kakao.com/v2/search/web"
-const API_KEY = "a5465491af98e1157d847f38bb48bee9"
+const API_KEY = "a87c5485c788a8a30b03b139d3818495"
 let query = ""
-let currentPage = 1 //현재의 페이지
+let currentPage = 1
 let totalPage = 1
 
 const inpElm = document.querySelector("#query")
@@ -10,10 +10,10 @@ const inpElm = document.querySelector("#query")
 document.querySelector("#searchBtn").addEventListener("click", function () {
   //   alert("test")
   query = inpElm.value.trim()
-  search()
+  searchView(currentPage)
 })
 
-async function search() {
+async function searchView(page) {
   // if(query == ""){
   if (!query) {
     alert("검색어를 입력하세요")
@@ -35,12 +35,12 @@ async function search() {
     data.documents.forEach(function (item, index) {
       kakaoData += `<div>
                         <a href="${item.url}" class="nav-link" target="_blank"><h4>${item.title}</h4></>
-                        <p class="bg-info rounded p-3">${item.contents}</p>
-                    </div>`
+                        </div>`
     })
 
+    // <p class="bg-info rounded p-3">${item.contents}</p>
     document.querySelector(".results").innerHTML = kakaoData
-    total = Math.min(50, Math.ceil(data.meta.pageable_))
+    totalPage = Math.min(50, Math.ceil(data.meta.pageable_count / 10))
     currentPage = page
     pagination()
   } catch (error) {
@@ -49,11 +49,11 @@ async function search() {
 }
 
 function pagination() {
-  const pn = document.querySelector("pagination")
+  const pn = document.querySelector(".pagination")
   pn.innerHTML = ""
 
-  const startPage = Math.floor((currentPage - 1) / 10) * 10 + 1
-  const endPage = Math.min(startPage + 9, totalPage)
+  const startPage = Math.floor((currentPage - 1) / 10) * 10 + 1 // init 1
+  const endPage = Math.min(startPage + 9, totalPage) // init 10
 
   console.log("page : " + startPage, endPage)
 
@@ -63,14 +63,17 @@ function pagination() {
   pn.appendChild(prevLi)
 
   if (currentPage == 1) {
-    prevLi.classList.add("disabled")
+    prevL
+    i.classList.add("disabled")
   }
 
   for (let i = startPage; i <= endPage; i++) {
-    const liElem = document.createElement("li")
+    const liElem = document.createElement("li") // <li class=""></li>
     liElem.className = `page-item ${i == currentPage ? "active" : ""}`
-    liElem.innerHTML = `<div class="page-link" onclick="search(${i})">${i}</div>`
+    liElem.innerHTML = `<a href="javascript:void(0)" class="page-link" onclick="searchView(${i})">${i}</a>`
+    // liElem.textContent = i
     pn.appendChild(liElem)
+    // pn.insertBefore(liElem, nextLi)
   }
 
   const nextLi = document.createElement("li")
@@ -83,20 +86,14 @@ function pagination() {
   }
 
   document.querySelector(".prevPage").addEventListener("click", function () {
-    if (currentPage == totalPage) {
-      nextLi.classList.add("disabled")
+    if (currentPage > 1) {
+      searchView(currentPage - 1)
     }
+  })
 
-    document.querySelector(".prevPage").addEventListener("click", function () {
-      if (currentPage > 1) {
-        searchView(currentPage - 1)
-      }
-    })
-
-    document.querySelector(".nextPage").addEventListener("click", function () {
-      if (currentPage < totalPage) {
-        searchView(currentPage + 1)
-      }
-    })
+  document.querySelector(".nextPage").addEventListener("click", function () {
+    if (currentPage < totalPage) {
+      searchView(currentPage + 1)
+    }
   })
 }
