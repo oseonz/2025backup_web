@@ -13,8 +13,9 @@
     />
     <script
       type="text/javascript"
-      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=05222ace53571c8fbb636c91def0fbc2&autoload=true"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=977a67b57adb166100f0881f57d677b0&autoload=true"
     ></script>
+
     <style>
       .imgView {
         width: 100%;
@@ -51,6 +52,25 @@
         justify-content: center;
         align-items: center;
       }
+
+      .pageNum a {
+        display: block;
+        width: 35px;
+        height: 35px;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .pageNum.active a {
+        background-color: skyblue;
+        border: 0 none;
+      }
+      .pageNation .prev,
+      .pageNation .next {
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -86,31 +106,21 @@
           </div>
         </div>
       </div> -->
-      <div class="row tourData"></div>
-    </div>
-
-    <div class="container">
-      <div class="d-flex justify-content-center">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link"><</a>
-          </li>
-
-          <li class="page-item">
-            <a class="page-link" href="#">></a>
-          </li>
-        </ul>
+      <div class="row tourData mb-3"></div>
+      <div class="pageNation d-flex justify-content-center py-5">
+        <div class="wrap d-flex justify-content-center align-items-center gap-4">
+          <div class="prev"><i class="fa-solid fa-arrow-left"></i></div>
+          <div class="pageList d-flex gap-2">
+            <!-- <span class="pageNum"><a href="#" class="nav-link">1</a></span>
+            <span class="pageNum active"><a href="#" class="nav-link">2</a></span>
+            <span class="pageNum"><a href="#" class="nav-link">3</a></span> -->
+          </div>
+          <div class="next"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="fNext">>></div>
+        </div>
       </div>
     </div>
 
-    <!-- <script>
-      let html = ""
-      for (let i = 1; i <= 10; i++) {
-        html += `<span><a href="#">${i}</a></span>`
-      }
-      console.log(html)
-      document.querySelector(".pageNum").innerHTML = html
-    </script> -->
     <!-- Modal -->
     <div
       class="modal fade"
@@ -130,9 +140,9 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body px-0">
             <!-- 지도보기  -->
-            <div id="map" style="width: 400px; height: 400px"></div>
+            <div id="map" style="width: 480px; height: 400px"></div>
             <!-- 지도보기  -->
           </div>
           <div class="modal-footer">
